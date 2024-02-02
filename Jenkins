@@ -9,7 +9,11 @@ pipeline {
         
         stage('Build'){
             steps{
-                sh 'docker build . -t my-apache-image:latest'
+                    agent {
+                            docker {
+                                docker.build('my-build-image').inside("--volume=/var/run/docker.sock:/var/run/docker.sock")
+                            }
+                    }
             }
         }
         stage('Test'){
