@@ -9,7 +9,7 @@ pipeline {
         
         stage('Build'){
             steps{
-                docker build -t my-apache-image:latest
+                sh "docker build -t my-apache-image:latest"
             }
         }
         stage('Test'){
