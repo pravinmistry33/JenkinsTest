@@ -18,7 +18,7 @@ pipeline {
         
         stage('Build'){
             steps{
-                echo ${dockerHome]
+                echo ${dockerHome}
                 echo ${env.PATH}
                 sh "docker build . -t my-apache-image:latest"
             }
