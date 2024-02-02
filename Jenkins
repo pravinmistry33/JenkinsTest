@@ -1,17 +1,15 @@
 pipeline {
     agent { dockerfile true }
     stages{
-        stage('Initialize'){
-            steps{
-                def dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
-        }
-
         stage('Code'){
             steps{
                 git url: 'https://github.com/pravinmistry33/JenkinsTest.git', branch: 'master'
             }
+        }
+
+        stage('Initialize'){
+                def dockerHome = tool 'myDocker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
         }
         
         stage('Build'){
