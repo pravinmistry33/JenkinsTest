@@ -1,5 +1,5 @@
-/*pipeline {
-    agent any
+pipeline {
+    agent { dockerfile true }
     stages{
         stage('Code'){
             steps{
@@ -20,18 +20,6 @@
         stage('Deploy'){
             steps{
                 sh "docker run -dp 127.0.0.1:96:80 my-apache-image:latest"
-            }
-        }
-    }
-}*/
-
-pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-                sh 'svn --version'
             }
         }
     }
