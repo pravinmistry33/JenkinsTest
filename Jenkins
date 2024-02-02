@@ -18,7 +18,7 @@ pipeline {
         
         stage('Build'){
             steps{
-                sh "docker build . -t my-apache-image:latest"
+                sh "docker build . -t apache-image"
             }
         }
         stage('Test'){
@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                sh "docker run -dp 127.0.0.1:96:80 my-apache-image:latest"
+                sh "docker run -dp 127.0.0.1:96:80 apache-image"
             }
         }
     }
