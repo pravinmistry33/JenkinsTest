@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'httpd -v'
+                sh "docker run -dP apache-image"
             }
         }
     }
