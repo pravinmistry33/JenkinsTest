@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                sh "docker run -dp 127.0.0.1:96:80 apache-image"
+                sh "docker run -dP apache-image"
             }
         }
     }
