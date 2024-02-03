@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh "docker run u 0 --privileged --name jenkins -dP -v /var/run/docker.sock:/var/run/docker.sock apache-image"
+                sh "docker run --name jenkins -dP -v /var/run/docker.sock:/var/run/docker.sock apache-image"
             }
         }
     }
