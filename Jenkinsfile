@@ -2,6 +2,7 @@ pipeline {
     agent { dockerfile true }
     stages {
         stage('Build'){
+            agent { dockerfile true }
             steps{
                 sh "whereis docker"
             }
