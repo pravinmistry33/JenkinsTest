@@ -6,7 +6,7 @@ pipeline {
                 echo 'Hello World'
                 sh 'echo myCustomEnvVar = $myCustomEnvVar'
                 sh 'echo $PATH'
-                sh 'whereis docker'
+                sh 'echo whoami'
                 sh 'docker --version'
             }
         }
